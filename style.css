@@ -1,5 +1,6 @@
 :root {
   --primary: #006efa;
+  --primary-darker: #004CAD;
   --bg-dark: #191414;
   --bg-light: #282828;
   --bg-lighter: #524242;
@@ -95,7 +96,9 @@ input[type="text"]::placeholder {
   line-height: auto;
 }
 
-
+.btn:hover{
+  background-color: var(--primary-darker);
+}
 
 .primary{
  background-color: var(--primary); 
@@ -107,7 +110,7 @@ input[type="text"]::placeholder {
 }
 
 #loading-msg {
-  margin-top: 1rem;
+  margin-top: 8px;
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.6);
 }
