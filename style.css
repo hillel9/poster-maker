@@ -324,7 +324,7 @@ select option:disabled {
   flex: none;
   order: 0;
   flex-grow: 0;
-  display: flex; flex-direction:column; gap:8px;
+  display: none; flex-direction:column; gap:8px;
 }
 
 .output-title {

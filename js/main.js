@@ -1,5 +1,3 @@
-document.querySelector('.output-text').style.display = "none";
-
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
