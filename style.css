@@ -29,9 +29,6 @@ body {
   padding: 32px;
 }
 
-.webhook-form {
-}
-
 .properties {
   display: flex;
   flex-direction: row;
