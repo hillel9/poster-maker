@@ -3,7 +3,7 @@ form.addEventListener("submit", async (e) => {
 
   document.getElementById("loading-msg").style.display = "block";
   output.classList.add("loading-state");
-  document.querySelector('.output-text')[0].style.display = "none";
+  document.querySelector('.output-text').style.display = "none";
   outputElement.style.display = "none";
 
   //Reset output
