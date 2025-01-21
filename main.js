@@ -1,6 +1,7 @@
 import html2canvas from "https://esm.sh/html2canvas";
 console.clear();
 
+//Webhook URL
 const webhookUrl = "https://hook.eu2.make.com/m8o8kokophthtg7yan345td9ry9h3eul";
 
 //Form variables
