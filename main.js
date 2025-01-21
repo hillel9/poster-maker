@@ -1,4 +1,4 @@
-import html2canvas from "https://esm.sh/html2canvas";
+//import html2canvas from "https://esm.sh/html2canvas";
 console.clear();
 
 //Webhook URL
