@@ -139,6 +139,7 @@ if (imageDescriptionInput.value !== "") {
     form.style.pointerEvents = 'none';
     designer.style.display = "flex";
     document.querySelector('.output-text').style.display = "flex";
+    outputElement.style.display = "block";
   }
 });
 
