@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poster maker</title>
+
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <div class="inspect">
+      <h1 class="title-1">Poster maker</h1>
+      <form id="webhookForm" class="webhook-form">
+        <div class="properties">
+    
+          <div class="form-group flex">
+            <label for="theme" class="form-label">Theme of your poster</label>
+            <input type="text" id="theme" required placeholder="E.g. a poster about paris or a Beatles album cover..." autocomplete="off">
+          </div>
+    
+          <div class="form-group">
+            <label for="purpose" class="form-label">Purpose</label>
+            <select id="purpose" required>
+              <option value="p1" selected>Poster</option>
+              <option value="p2">Video thumbnail</option>
+            </select>
+          </div>
+    
+          <div class="form-group">
+            <label for="theme" class="form-label">Image style</label>
+            <select id="style" required>
+              <option value="Digital art, modern, clean" selected>Digital art</option>
+              <option value="impressionist">Impressionist</option>
+              <option value="expressionism">Expressionism</option>
+              <option value="abstract">Abstract</option>
+              <option value="cubism">Cubism</option>
+              <option value="surrealism">Surrealism</option>
+              <option value="pop art">Pop Art</option>
+              <option value="swiss international style">Swiss style</option>
+              <option value="vintage travel advertisements mid-20th">Vintage</option>
+              <option value="bauhaus">Bauhaus</option>
+              <option value="realistism">Photorealistic</option>
+              <option value="3d render">3D Render</option>
+              <option value="watercolor">Watercolor</option>
+            </select>
+          </div>
+    
+          <div class="form-group">
+            <label for="ratio" class="form-label">Ratio</label>
+            <select id="ratio" required>
+              <option value="16:9" selected>16:9</option>
+              <option value="9:16">9:16</option>
+              <option value="1:1">1:1</option>
+            </select>
+          </div>
+    
+        </div>
+    
+        <div class="properties">
+    
+          <div class="form-group flex">
+            <label for="image-description" class="form-label">Additional image description (Optional)</label>
+            <input type="text" id="image-description" placeholder="Write here what your image should include..." autocomplete="off">
+          </div>
+    
+        </div>
+    
+        <div class="submit-area">
+          <button type="submit" class="btn primary">Generate</button>
+          <p id="loading-msg">Generating the magic for you...</p>
+        </div>
+    
+      </form>
+    
+    </div>
+    
+    <div class="work-area">
+    
+      <div class="designer" id="designer">
+        <div id="d-general" class="designer-panel">
+          <h2 class="title-2">General</h2>
+          <div class="slider-container">
+            <div class="value-display">Color overlay opacity</div>
+            <div class="slider-box">
+              <span class="slider-value" id="opacityValue">60%</span>
+              <input type="range" min="0" max="100" value="60" class="opacity-slider" id="opacitySlider">
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="font-family" class="form-label">Font family</label>
+            <select id="font-family">
+              <option value="Poppins" style="font-family: 'Poppins', sans-serif">Poppins</option>
+              <option value="Lora" style="font-family: 'Lora', serif">Lora</option>
+              <option value="Open Sans" style="font-family: 'Open Sans', sans-serif">Open Sans</option>
+              <option value="Merriweather" style="font-family: 'Merriweather', serif">Merriweather</option>
+              <option value="Montserrat" style="font-family: 'Montserrat', sans-serif">Montserrat</option>
+              <option value="Raleway" style="font-family: 'Raleway', sans-serif">Raleway</option>
+              <option value="Playfair Display" style="font-family: 'Playfair Display', serif">Playfair Display</option>
+              <option value="Ubuntu" style="font-family: 'Ubuntu', sans-serif">Ubuntu</option>
+              <option value="Oswald" style="font-family: 'Oswald', sans-serif">Oswald</option>
+              <option value="Source Serif Pro" style="font-family: 'Source Serif Pro', serif">Source Serif Pro</option>
+              <option value="Quicksand" style="font-family: 'Quicksand', sans-serif">Quicksand</option>
+              <option value="Fira Sans" style="font-family: 'Fira Sans', sans-serif">Fira Sans</option>
+              <option value="Spectral" style="font-family: 'Spectral', serif">Spectral</option>
+              <option value="Roboto" style="font-family: 'Roboto', sans-serif">Roboto</option>
+            </select>
+          </div>
+    
+          <div class="form-group">
+            <label for="font-family" class="form-label">Layout</label>
+            <div class="grid-container">
+              <div class="grid-cell" data-align="1"></div>
+              <div class="grid-cell" data-align="2"></div>
+              <div class="grid-cell" data-align="3"></div>
+              <div class="grid-cell" data-align="4"></div>
+              <div class="grid-cell" data-align="5"></div>
+              <div class="grid-cell" data-align="6"></div>
+              <div class="grid-cell" data-align="7"></div>
+              <div class="grid-cell" data-align="8"></div>
+              <div class="grid-cell" data-align="9"></div>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="font-family">Visibility</label>
+            <div class="checkbox-group">
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="title-visibility" class="visbility-toggle" checked>
+                <label for="title" class="form-label">Title</label>
+              </div>
+    
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="paragraph-visibility" checked>
+                <label for="Paragraph">Paragraph</label>
+              </div>
+            </div>
+    
+          </div>
+    
+          <div class="form-group">
+            <label class="input-label">Add a sticker</label>
+            <label for="image-input" class="btn secondary">Upload image</label>
+            <input type="file" id="image-input" accept="image/*" class="image-input">
+          </div>
+    
+        </div>
+        
+        <div id="designer-panel-secondary" class="designer-panel-secondary">
+        <div id="d-title" class="designer-panel">
+          <h2 class="title-2">Title styles</h2>
+    
+          <div class="form-group">
+            <label for="font-family" class="form-label">Font styles</label>
+            <div class="checkbox-group">
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="turn-bold" class="visbility-toggle" checked>
+                <label for="turn-bold">Bold</label>
+              </div>
+    
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="turn-italic">
+                <label for="turn-italic">Italic</label>
+              </div>
+              <div class="checkbox-wrapper">
+                <input type="checkbox" id="turn-uppercase">
+                <label for="turn-uppercase">Uppercase</label>
+              </div>
+            </div>
+          </div>
+    
+          <div class="slider-container">
+            <div class="value-display">Font size</div>
+            <div class="slider-box">
+              <span class="slider-value" id="title-font-size-value">72</span>
+              <input type="range" min="50" max="120" value="72" id="title-font-size-slider">
+            </div>
+          </div>
+    
+          <div class="slider-container">
+            <div class="value-display">Letter spacing</div>
+            <div class="slider-box">
+              <span class="slider-value" id="title-letter-spacing-value">0</span>
+              <input type="range" min="-4" max="4" value="0" id="title-letter-spacing-slider">
+            </div>
+          </div>
+    
+          <button id="title-edit-done" class="btn primary">Done</button>
+        </div>
+           <!--     End title panel -->
+        
+          <div id="d-element" class="designer-panel designer-panel-secondary">
+          <h2 class="title-2">Sticker styles</h2>
+    
+          <div class="slider-container">
+            <div class="value-display">Scale</div>
+            <div class="slider-box">
+              <span class="slider-value" id="element-scale-value">1</span>
+              <input type="range" min="0.5" max="3" step="0.1" value="1" id="element-scale-slider">
+            </div>
+          </div>
+    
+          <button id="element-edit-done" class="btn primary">Done</button>
+        </div>
+        <!--     End element panel -->
+    </div>
+        <!--     End secondary panel -->
+      </div>
+    
+      <div class="preview-area">
+        <div id="output">
+          <div class="output-text">
+            <h1 id="output-title" class="output-title bold" contenteditable="true"></h1>
+            <p id="output-paragraph" class="output-paragraph" contenteditable="true"></p>
+          </div>
+          <div class="output-overlay" id="color-overlay"></div>
+          <img src="" alt="poster-image" id="output-image">
+          <div class="guide-line vertical-guide"></div>
+          <div class="guide-line horizontal-guide"></div>
+          <img id="output-element" class="output-element" alt="Drag the image here">
+        </div>
+    
+        <button id="download" class="btn secondary">Download as PNG</button>
+      </div>
+    
+    </div>
+</body>
+</html>  
