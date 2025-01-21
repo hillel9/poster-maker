@@ -49,11 +49,15 @@ h1,h2{
 }
 
 .properties{
-  margin-bottom: 16px;
+margin-bottom: 16px;
 }
 
 .flex {
-  flex: 1;
+  flex-grow: 1;
+}
+
+.fixed{
+    width: 140px;
 }
 
 .form-label {
@@ -64,7 +68,7 @@ h1,h2{
 }
 
 input[type="text"] {
-  width: 100%;
+    width: 100%;
   padding: 0.75rem 1rem;
   border: none;
   border-radius: 4px;
@@ -96,12 +100,12 @@ input[type="text"]::placeholder {
   line-height: auto;
 }
 
-.btn:hover{
-  background-color: var(--primary-darker);
-}
-
 .primary{
  background-color: var(--primary); 
+}
+
+.primary:hover{
+    background-color: var(--primary-darker);
 }
 
 .secondary {
@@ -123,7 +127,7 @@ input[type="text"]::placeholder {
 }
 
 select {
-  width: 140px;
+  width: 100%;
   box-sizing: border-box;
   padding: 0.75rem 1rem;
   border: none;
@@ -147,10 +151,6 @@ select:focus {
 
 select:hover {
   background-color: var(--bg-light);
-}
-
-#purpose {
-  width: 220px;
 }
 
 select option {
