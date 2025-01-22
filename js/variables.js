@@ -6,6 +6,8 @@ const form = document.getElementById("webhookForm");
 const style = document.getElementById("style");
 const ratio = document.getElementById("ratio");
 const imageDescriptionInput = document.getElementById("image-description");
+const theme = document.getElementById("theme");
+const purposeInput = document.getElementById("purpose");
 
 //Prompt variables
 const purpose = [

@@ -6,6 +6,7 @@
   --bg-lighter: #524242;
   --text-light: #ffffff;
 }
+
 body {
   background-color: #000;
   color: var(--text-light);
@@ -114,7 +115,7 @@ input[type="text"]::placeholder {
 }
 
 #loading-msg {
-  margin-top: 8px;
+  margin-top: 12px;
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.6);
 }

@@ -13,21 +13,16 @@ form.addEventListener("submit", async (e) => {
   paragraph.innerHTML = "";  
   
   try {
-    // Show loading state
-    form.classList.add("loading");
-
-    const theme = document.getElementById("theme").value;
-    const purposeInput = document.getElementById("purpose").value;
 
     //Build prompt for text
-    switch (purposeInput) {
+    switch (purposeInput.value) {
       case "p1":
-        instructions.title = purpose[0].title + theme + stringFormat;
-        instructions.paragraph = purpose[0].paragraph + theme + stringFormat;
+        instructions.title = purpose[0].title + theme.value + stringFormat;
+        instructions.paragraph = purpose[0].paragraph + theme.value + stringFormat;
         break;
       case "p2":
-        instructions.title = purpose[1].title + theme + stringFormat;
-        instructions.paragraph = purpose[1].paragraph + theme + stringFormat;
+        instructions.title = purpose[1].title + theme.value + stringFormat;
+        instructions.paragraph = purpose[1].paragraph + theme.value + stringFormat;
         break;
     }
 
@@ -139,7 +134,9 @@ if (imageDescriptionInput.value !== "") {
     form.style.pointerEvents = 'none';
     designer.style.display = "flex";
     document.querySelector('.output-text').style.display = "flex";
-    outputElement.style.display = "block";
+    if(outputElement.src !== ""){
+      outputElement.style.display = "block";
+    }
   }
 });
 
@@ -296,7 +293,6 @@ function slideRight(){
   designerGeneral.classList.remove('slide-left');
   designerPanelSecondary.classList.remove('slide-left');
 }
-
 
 // Swap title
 title.addEventListener("focus", function () {
