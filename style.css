@@ -307,14 +307,13 @@ select option:disabled {
   width: 800px;
   height: 450px;
   aspect-ratio: 16 / 9;
-  padding: 24px;
+  padding: 24px; box-sizing: border-box;
   margin-bottom: 16px;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   background-size: cover;
   position: relative;
-/*   border-radius: 24px; */
   overflow: hidden;
   background-color: var(--bg-light);
   color: #fff;
