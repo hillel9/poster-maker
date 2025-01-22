@@ -38,7 +38,7 @@ if (imageDescriptionInput.value !== "") {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        theme: theme,
+        theme: theme.value,
         title: instructions.title,
         paragraph: instructions.paragraph,
         style: style.value,
